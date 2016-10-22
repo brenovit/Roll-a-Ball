@@ -45,7 +45,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Script\Bloco.cs" />
+     <Compile Include="Assets\_Script\CameraController.cs" />
+     <Compile Include="Assets\_Script\Cronometro.cs" />
+     <Compile Include="Assets\_Script\Destroy.cs" />
+     <Compile Include="Assets\_Script\GameController.cs" />
+     <Compile Include="Assets\_Script\LevelManager.cs" />
      <Compile Include="Assets\_Script\PlayerControll.cs" />
+     <Compile Include="Assets\_Script\TesteBola.cs" />
+     <None Include="Assets\_Materials\UnlitVertexColour_Alpha.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

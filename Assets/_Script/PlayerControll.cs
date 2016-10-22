@@ -5,40 +5,45 @@ using UnityEngine.UI;
 public class PlayerControll : MonoBehaviour
 {
 	public Text label;
-	public float speed;
+	public float velocidade;
 
+	//componente de corpo rigido
 	private Rigidbody rb;
+	public GameController gm;
 
-	// Use this for initialization
+	//gameobject da particula que será isntaciada quando o jogador for destuido
+	public GameObject particula;
+
 	void Start ()
 	{
-		rb = GetComponent<Rigidbody> ();	
+		rb = GetComponent<Rigidbody> ();
+		label.text = "0000";	
 	}
-	
-	// Update is called once per frame
+
 	void FixedUpdate ()
 	{
 		Vector3 movement;
+
 		#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
-		movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
 		#elif UNITY_IOS || UNITY_ANDROID
-		float moveX = Input.acceleration.x;
-		float moveY = Input.acceleration.y;
-		movement = new Vector3 (moveX, 0.0f, moveY);
+		float moveHorizontal = Input.acceleration.x * 1.5f;
+		float moveVertical = Input.acceleration.y * 1.5f;
 		#endif
 
-		rb.AddForce (movement * speed);
+		movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
-		label.text = "0000";
+		rb.AddForce (movement * velocidade);
 	}
 
-	void OnCollisionStay (Collision coll)
+	void OnCollisionEnter (Collision coll)
 	{
-		if (coll.gameObject.tag.Equals ("Wall")) {
-			label.text = "Te adoro minha flor. :)";
+		if (coll.gameObject.CompareTag ("Parede")) {
+			Instantiate (particula, this.transform.position, Quaternion.identity);
+			gm.PerdeuJogo ();
+			Destroy (this.gameObject);
 		}
 	}
 }
