@@ -11,15 +11,17 @@ public class CameraController : MonoBehaviour
 
 	void Start ()
 	{
-		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
+		if (player == null) {	//caso o objeto player esteja vazio
+			player = GameObject.FindGameObjectWithTag ("Player");	//o unity ira procurar o gameobject com a Tag player, e ira associa-lo ao objeto player.
 		}
-		distancia = transform.position - player.transform.position;
+
+		distancia = transform.position - player.transform.position;	//diferença do local onde a camera está e o jogador
 	}
-	
-	// Update is called once per frame
+
 	void LateUpdate ()
 	{
-		transform.position = player.transform.position + distancia;
+		if (player != null) {
+			transform.position = player.transform.position + distancia;	//a camera ira receber a
+		}
 	}
 }

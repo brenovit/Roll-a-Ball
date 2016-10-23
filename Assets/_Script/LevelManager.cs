@@ -2,21 +2,15 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour {
-
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
+public class LevelManager : MonoBehaviour
+{
+	public void LoadLevel (string nome)	//rotina para carregar uma cena pelo nome
+	{
+		SceneManager.LoadScene (nome);	//comando para carregar uma cena
 	}
 
-	public void LoadLevel (string nome) {
-		SceneManager.LoadScene (nome);
-	}
-
-	public void QuitGame(){
-		Application.Quit ();
+	public void QuitGame ()	//fechar o jogo
+	{
+		Application.Quit ();	//comando para finalizar o jogo
 	}
 }

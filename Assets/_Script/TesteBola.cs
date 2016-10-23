@@ -20,7 +20,7 @@ public class TesteBola : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		Vector3 movement;
+		/*Vector3 movement;
 		velocidade = velControol.value;
 		labelVel.text = "Vel: " + velocidade;
 
@@ -37,6 +37,6 @@ public class TesteBola : MonoBehaviour
 		movement = new Vector3 (moveX, 0.0f, moveZ);
 
 		rb.AddForce (movement * velocidade);
-		//transform.Translate (movement);
+		//transform.Translate (movement);*/
 	}
 }
