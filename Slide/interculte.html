@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Desenvolvimento de Jogos com Unity - Breno Nunes</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<a href="https://unity3d.com/pt" target="_blank"><img align="left" src="apoio/unity-logo-white.png" alt="Unity" height='10%' width='20%'></a>
+				<a href="http://www.unijorge.edu.br/" target="_blank"><img align="right" src="apoio/lgo_uni.png" alt="Unijorge" height='10%' width='10%'/></a>
+
+				<section><!--Intro-->
+					<h3>Minicurso Interculte 2016</h3>
+					<h2>Desenvolvimento de Jogos com Unity</h2>
+					<p><a href="https://unity3d.com/pt/learn/tutorials/projects/roll-ball-tutorial" target="_blank">Move-the-Ball</a></p>
+					<small>Project from Unity modded by Breno</small>
+				</section><!--Intro-->
+
+				<section> <!--About me-->
+					<h2>Quem sou eu?</h2>
+					<p>Breno Nunes Arantes</p>
+					<ul>
+					<img align="right" src="apoio/bna.png" alt="Eu">
+						<li>Desenvolvedor de jogos</li>
+						<li>Estudante de Análise e Desenvolvimento de Sistemas</li>		
+						<li>Desenvolvedor WEB ASP.NET</li>				
+						<li>Iniciação Científica Jogo para Segurança do Trabalho</li>
+						<li>Iniciação Científica Automação de Recursos Acadêmicos</li>
+					</img>					
+					</ul>
+				</section> <!--About me-->
+
+				<section> <!--Plan-->					
+					<section>
+						<h2>O que nós vamos fazer nesta noite?</h2>
+					</section>
+					<section>
+						<p>&nbsp</p>
+						<img src="apoio/cerebro.png" class="plain" width="80%">
+					</section>
+					<section>					
+						<ol>
+							<li>Apresentar o Unity</li>							
+							<li>Preparar o ambiente</li>
+							<li>Conhecer a ferramenta</li>
+							<li>Fazer nosso primeiro jogo</li>
+							<li>Usar nossa imaginação*</li>
+						</ol>
+					</section>					
+				</section> <!--Plan-->
+
+				<section> <!--About Unity-->
+					<section>
+						<h2>O que é o Unity?</h2>
+					</section>
+					<section>
+						<p>O Unity é uma motor de jogos, lançada em 2005, com ênfase na portabilidade.</p>
+						<p>Oference suporte a 2 linguagens de programação de mercado: C# e JavaScript.</p>
+						<p>A empresa aposta alto nos desenvolvedores independentes, deixando o motor cada vez mais simples, com uma pequena curva de aprendizado.</p>
+					</section>
+					<section>
+						<h2>Principais Caracteristicas</h2>
+						<ul>
+							<li><a href="https://unity3d.com/unity/multiplatform" target="_blank">Multiplataforma</a></li>
+							<li><a href="https://unity3d.com/unity/services" target="_blank">Diversos serviços: ADS, Analytics, Cloud Build</a></li>
+							<li><a href="https://unity3d.com/unity/editor" target="_blank">Pequena curva de aprendizado.</a></li>
+							<li><a href="https://unity3d.com/asset-store" target="_blank">Loja de Recursos</a></li>
+							<li><a href="https://unity3d.com/pt/learn" target="_blank">Suporte a iniciantes e comunidade ativa.</a></li>
+						</ul>
+					</section>					
+				</section> <!--About Unity-->
+				
+				<section><!--Ambient-->
+					<section>						
+						<h2>Vamos preparar nosso ambiente!</h2>
+					</section>
+					<section>
+						<h2>Instalação do Unity</h2>
+						<p>Componentes mínimos para nosso projeto.</p>
+						<img class="plain" src="apoio/instalacao.png" width="70%">						
+					</section>
+					<section>
+						<h2>Recursos para Android</h2>
+						<p>Recursos para Android</p>						
+						<h4><a href="https://developer.android.com/studio/index.html#downloads" target="_blank">SDK - installer_r24.4.1</a></h4>
+						<h5>API 19, 21, 22, 23</h5>
+						<h4><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html?ssSourceSiteId=otnpt" target="_blank">JDK - jdk-8u112</a></h4>
+						<h4><a href="https://developer.android.com/ndk/downloads/index.html" target="_blank">NDK - android-ndk-r13</a></h4>
+					</section>						
+				</section>
+				<section data-background="apoio/backball.png" ><!--Dev part-->
+					<section style="background-color: black;">
+						<h2>Vamos fazer um jogo!</h2>
+					</section>
+					<section style="background-color: black;">
+						<h2>Move-the-Ball</h2>						
+						<p>Em seu primeiro contato no desenvolvimento com Unity, vamos criar um simples jogo para controlar uma bola, o qual ensina muitos dos princípios de trabalho com  Game Objects, Components, Prefabs, Física e Codificação.</p>
+						<small>In your first foray into Unity development, create a simple rolling ball game that teaches you many of the principles of working with Game Objects, Components, Prefabs, Physics and Scripting.</small>
+						<p style="text-align: right;"><a href="apoio/WEB-Parte1/index.html" target="_blank">Jogar&nbsp&nbsp</a></p>
+					</section>
+				</section>
+				<section>			
+					<section>
+						<h2>Entendendo a ferramenta</h2>
+						<ul>
+							<li>Criar um Projeto</li>
+							<li>Entender a Interface</li>
+							<li>GameObjects*</li>
+							<li>Components*</li>
+							<li>Prefabs*</li>
+						</ul>						
+					</section>
+					<section>
+						<h2>Criar um Projeto</h2>
+						<p>NEW > Nome do Projeto > Local de Criação > Create project</p>
+						<img width='80%' class="plain" src="apoio/novoProjeto.png">
+					</section>				
+					<section>
+						<h2>Entendendo a Interface</h2>
+						<ul>
+							<li>Scene View</li><small>Produção</small>
+							<li>Game View</li><small>Teste</small>							
+							<li>Hierarchy</li><small>Organização dos GameObjects na SceneView</small>
+							<li>Inspector</li><small>Modificador dos GameObjects</small>
+							<li>Project</li><small>Arquivos</small>
+							<li>Console</li><small>Log</small>
+						</ul>
+					</section>
+				</section>			
+				<section>
+					<section>
+						<h2>Pt.1 - Criando o ambiente e o jogador</h2>
+					</section>
+					<section>
+						<ol>
+							<li>Criar as pastas do Projeto.</li>
+							<li>Criar cena de jogo.</li>
+							<li>Criar o chão.</li>
+							<li>Criar as paredes.</li>
+							<li>Criar o jogador.</li>
+							<li>Criar os materiais.</li>
+						</ol>
+					</section>
+					<section>
+						<h3>No jogador...</h3>
+						<ol>
+							<li>Adicionar o Componente Physics > Rigidbody.</li>
+							<li>Adicionar o Componente Physics > Sphere Collider.</li>
+							<li>Criar e adicionar o Scrip PlayerController.</li>
+						</ol>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public class PlayerController : MonoBehaviour
+{
+	private Rigidbody rb;
+	public float velocidade;
+
+	void Start ()
+	{
+		rb = GetComponent<Rigidbody> ();
+	}
+
+	void FixedUpdate ()
+	{
+		Vector3 movement;
+
+		#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBGL
+		float moveHorizontal = Input.GetAxis ("Horizontal");
+		float moveVertical = Input.GetAxis ("Vertical");
+
+		#elif UNITY_IOS || UNITY_ANDROID
+		float moveHorizontal = Input.acceleration.x * 1.5f;
+		float moveVertical = Input.acceleration.y * 1.5f;
+		#endif
+
+		movement = new Vector3 (moveHorizontal, 0, moveVertical);
+
+		rb.AddForce (movement * velocidade);
+	}
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Teste 1!</h2>
+					</section>
+					<section>
+						<h2>Pt.2 - Câmera e cenário</h2>
+					</section>			
+					<section>
+						<ol>
+							<li>Colocar a câmera como filha do jogador.</li>
+							<li>Posicionar a câmera em: 0, 9.5, -10</li>
+							<li>Rotacionar a câmera em: 45, 0, 0</li>
+							<li>Criar e adicionar o Scrip CameraController.</li>
+						</ol>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public class CameraController : MonoBehaviour
+{
+	private GameObject player;
+	private Vector3 distancia;
+
+	void Start ()
+	{
+		if (player == null) {
+			player = GameObject.FindGameObjectWithTag ("Player");
+		}
+		distancia = transform.position - player.transform.position;
+	}
+	
+	void LateUpdate ()
+	{
+		transform.position = player.transform.position + distancia;
+	}
+}
+						</code></pre>
+					</section>
+					<section>
+						<h2>Teste 2!</h2>
+					</section>
+					<section>
+						<h2>Pt.3 - Criando os Blocos</h2>
+					</section>
+					<section>
+						<ol>
+							<li>Criar um Cubo.</li>
+							<li>Rotaciona-lo em: 45, 45, 45</li>
+							<li>Adionar o Script Bloco no Cubo.</li>
+							<li>Definir Is Trigger? On</li>
+							<li>Criar os prefabs.</li>
+						</ol>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public class Bloco : MonoBehaviour
+{	
+	//public GameController gm;
+
+	void Update ()
+	{
+		transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);	//alterando a rotação do cubo
+	}
+
+	public void OnTriggerEnter (Collider col)
+	{
+		if (col.gameObject.CompareTag ("Player")) {
+			//gm.AlteraPontos (100);
+			//gm.DestroiBloco ();
+			Destroy (this.gameObject);
+		}
+	}
+}						
+						</code></pre>
+					</section>
+					<section>
+						<h2>Teste 3!</h2>
+					</section>
+					<section>
+						<h2>Pt.4 - Sistema de Pontos</h2>
+					</section>
+					<section>
+						<ol>
+							<li>Criar um GameObject Empty.</li>
+							<li>Adicionar o Script GameController.</li>
+							<li>Criar o Text da pontuação. (Canvas)</li>
+							<li>Colocar a fonte DigitalDreamFat.</li>
+						</ol>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public class GameController : MonoBehaviour
+{	
+	private int pontos;
+	public Text labelPontos;	
+	private int qtdBlocos;
+	//public GameObject panel;
+	public static bool jogoAcabou = false;
+
+	void Start ()
+	{
+		jogoAcabou = false;
+		qtdBlocos = GameObject.FindGameObjectsWithTag ("Bloco").Length;		
+		pontos = 0;
+		Time.timeScale = 1;
+	}
+					
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public void AlteraPontos (int valor)
+{
+	pontos += valor;
+	labelPontos.text = pontos.ToString ("0000");
+}
+
+public void DestroiBloco ()
+{
+	qtdBlocos--;
+	if (qtdBlocos == 0) {
+		PerdeuJogo ();
+	}
+}			
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public void PerdeuJogo ()
+{
+	if (!jogoAcabou) {
+		Time.timeScale = 0.1f;			
+		//panel.SetActive (true);
+		jogoAcabou = true;
+	}
+}	
+
+public void Restart (string cena)
+{
+	panel.SetActive (false);
+	SceneManager.LoadScene (cena);
+}
+					
+						</code></pre>
+					</section>
+					<section>
+						<ol>
+							<li>Descomentar os comandos do GameController do Script Bloco.</li>
+							<li>Definir os GameObjects do GameController.</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Teste 4!</h2>
+					</section>
+					<section>
+						<h2>Pt.5 - Música de fundo, Painel de Restart, Menu Principal</h2>
+					</section>
+					<section>
+						<ol>
+							<li>Adicionar o componente Audio > Audio Source no GameObject _GM(Game Controller).</li>
+							<li>Inserir o AudioClip Retro Comedy.</li>
+							<li>Ativar o Play on Awake e Loop.</li>
+							<li>Criar um Panel no Canvas.</li>
+							<li>Inserir três Text: Game Over, Restart e Menu Principal.</li>
+							<li>Colocar a fonte DayDreamFat nos Texts.</li>
+							<li>Adiciona o Componente UI > Button nos GameObjects de Restart e MenuPrincipal.</li>
+						</ol>
+					</section>
+					<section>
+						<ol>
+							<li>Criar uma nova cena. (Menu_Principal)</li>
+							<li>Inserir três Text: Titulo do Game, Start e Quit.</li>
+							<li>Criar um GameObject Empty e adicionar o Script LevelManager</li>
+							<li>Adiciona o Componente UI > Button nos GameObjects de Start e Quit.</li>
+						</ol>
+					</section>
+					<section>
+						<pre><code class="csharp" data-trim contenteditable>
+public class LevelManager : MonoBehaviour
+{
+	public void LoadLevel (string nome)
+	{
+		SceneManager.LoadScene (nome);
+	}
+	public void QuitGame ()
+	{
+		Application.Quit ();
+	}
+}
+						</code></pre>
+					</section>
+					<section>
+						<ol>
+							<li>Criar uma nova cena. (Menu_Principal)</li>
+							<li>Inserir três Text: Titulo do Game, Start e Quit.</li>
+							<li>Criar um GameObject Empty e adicionar o Script LevelManager.</li>
+							<li>Adicionar o Componente UI > Button nos GameObjects de Start e Quit.</li>
+							<li>Adicionar o GameObject LevelManager no evento de clique dos Texts Start e Quit, para carregar cena e fechar o jogo, respectivamente.</li>							
+						</ol>
+					</section>
+					<section>
+						<ol>
+							<li>Na cena Level_01, criar um GameObject Empty e adicionar o Script LevelManager.</li>
+							<li>Adicionar o GameObject LevelManager no evento de clique do Text Main_Menu para carregar cena do menu principal.</li>
+							<li>Adicionar o GameObject GameController no evento de clique do Text Restart para recarregar a cena atual.</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Teste 5.1!</h2>
+					</section>
+					<section>
+						<h2>Compilar para Desktop.</h2>
+						<h2>Compilar para Android.</h2>
+						<h2>Teste 5.2!</h2>
+					</section>					
+				</section><!-- Dev part-->
+				<section>
+					<h2>Fim da Parte 1.</h2>									
+				</section>
+				<section>
+					<section>
+						<h2>Parte 2</h2>
+						<h3>Assets necessários</h3>
+						<ol>
+							<li><a href="https://www.assetstore.unity3d.com/en/#!/content/68228" target="_blank">8-Bit Style Sound Effects</a></li>
+							<li><a href="https://www.assetstore.unity3d.com/en/#!/content/67834" target="_blank">Simple FX - Cartoon Particles</a></li>
+							<li><a href="https://www.assetstore.unity3d.com/en/#!/content/63054" target="_blank">Music Starter Kit</a></li>
+						</ol>						
+					</section>
+					<section>
+						<h2>O que podemos fazer!</h2>
+						<ol>
+							<li>Inserir particulas na destruição dos Blocos e Jogador.</li>
+							<li>Tocar um som ao destruir um bloco.</li>
+							<li>Impedir que o Jogador encoste nas paredes.</li>
+							<li>Mostrar a quantidade de Blocos restantes.</li>
+							<li>Inserir um cronômetro.</li>
+						</ol>
+						<p style="text-align: right;"><a href="apoio/WEB-Parte2/index.html" target="_blank">Jogar&nbsp&nbsp</a></p>
+					</section>
+					<section>
+						<h2>Fim da Parte 2.</h2>
+					</section>
+				</section>
+				<section>
+					<h2>Obrigado a todos!</h2>
+					<ul>
+						<li>Facebook: <a href="https://www.facebook.com/breno.arantes97" target="_blank">breno.arantes97</a></li>
+						<li>Gmail: <a href="mailto:breno.arantes97@gmail.com" target="_blank">breno.arantes97</a></li>
+						<li>Skype: breno.nunes10</li>
+						<li>Número: 71 98676-6629</li>
+						<li>GitHub: <a href="https://github.com/brenovit" target="_blank">brenovit</a></li>
+					</ul>				
+					<p><a href="https://github.com/brenovit/Move-The-Ball">github.com/brenovit/Move-The-Ball</a></p>	
+				</section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>		
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },				
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			 function runProgram()
+        	{
+            	var shell = new ActiveXObject("WScript.Shell");                 
+            	var game = "H:/Projetos/Unity/Intercute/Slide/apoio/Roll-A-Ball.exe";
+            	shell.Run(game);
+        	}        
+		</script>
+	</body>
+</html>
